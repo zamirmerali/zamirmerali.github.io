@@ -16,6 +16,7 @@
         <script type="text/javascript" src="js/jquery-ui-1.10.3.custom.min.js"></script>
         <script type="text/javascript" src="js/gexfjs.js"></script>
         <script type="text/javascript" src="config.js"></script>
+        <script type="text/javascript" src="js/modal.js"></script>
     </head>
     <body>
         <div id="zonecentre" class="gradient">
@@ -55,8 +56,68 @@
                 <input id="searchinput" class="grey" autocomplete="off" />
                 <input id="searchsubmit" type="submit" />
             </form>
-        </div>
         <ul id="autocomplete">
         </ul>
+            <button id="infobutton">Info</button>
+            <div id="myModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                <span class="close">&times;</span>
+                <h1>NSX GRAPH</h1>
+
+<p><h4>Overview:</h4></p>
+<p>NSX Graph is an interactive co-authorship network for academic surgery. It depicts academic relationships between researchers in the form of a social-network graph.</p>
+
+<p>Note: Only researchers with at least 5 coauthorships with another researcher in the past 10 years are included in the graph. If you cannot find yourself this may be why.</p>
+
+<p><h4>Navigating the Graph:</h4></p>
+<p>- The size of a given node represents the number of colaborations the researcher was involved in during the past 10 years.</p>
+<p>- The thickness of a given edge between two researchers represents the number of colaborations between those two researchers.</p>
+<p>- The colour of a given node represents the cluster that node belongs to.</p> 
+<p>- Nodes with a high degree of connectedness will tend to be positioned close together.</p>
+
+<p><h4>Explanation of Terms:</h4></p>
+<p><b>Betweenness Centrality:</b> For every pair of nodes in the graph, there exists at least one shortest path between the nodes such that the number of edges that the path passes through is minimized. The betweenness centrality for each vertex is the number of these shortest paths that pass through the vertex.</p>
+
+<p><b>Closeness Centrality:</b> A measure of centrality in a network, calculated as the reciprocal of the sum of the length of the shortest paths between the node and all other nodes in the graph. Thus, the more central a node is, the closer it is to all other nodes.</p>
+
+<p><b>Eccentricity:</b> The distance between a given node and the furthest node in the network.</p> 
+
+<p><b>Harmonic Closeness Centrality:</b> The harmonic centrality reverses the sum and reciprocal operations in the definition of closeness centrality.</p>
+
+<p><h4>Data Source:</h4></p>
+<p>Citations were obtained from Web of Science by searching for topics: neurosurgery, spine surgery, neurooncology, functional neurosurgery, neurovascular surgery, pediatric neurosurgery within the data range Jan 2009 - May 2019. A total of 72,293 citations were included.</p> 
+
+<p><b>Created by Zamir Merali, MD, PGY-3 Resident, Division of Neurosurgery, University of Toronto</b></p>
+                </div>
+            </div>
+        </div>
+        <script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("infobutton");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
     </body>
 </html>
